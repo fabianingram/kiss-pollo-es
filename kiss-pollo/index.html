@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Kiss Pollos — Sinaloa-Style Chicken in South Phoenix</title>
+  <meta name="description" content="Sinaloa-style chicken, wings, sliders & sides. Open Mon–Fri 10:30am–5:00pm. 306 W Yavapai St, Phoenix AZ 85003." />
+  <meta name="theme-color" content="#0b0e13" />
+
+  <!-- Icons / PWA (keep if you use them) -->
+  <link rel="icon" href="favicon.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+  <link rel="manifest" href="manifest.webmanifest">
+
+  <!-- Preloads -->
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preload" as="image" href="assets/images/hero.jpg" />
+  <link rel="preload" as="video" href="assets/videos/hero.mp4" />
+
+  <!-- Leaflet CSS (for map) -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="anonymous"
+  />
+
+  <!-- Site CSS -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Kiss Pollos — Sinaloa-Style Chicken" />
+  <meta property="og:description" content="Open Mon–Fri 10:30am–5:00pm • 306 W Yavapai St, Phoenix AZ" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/images/hero.jpg" />
+  <meta property="og:url" content="https://fabianingram.github.io/kiss-pollo-es" />
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kiss Pollos — Sinaloa-Style Chicken">
+  <meta name="twitter:description" content="Open Mon–Fri 10:30am–5:00pm • 306 W Yavapai St, Phoenix">
+  <meta name="twitter:image" content="assets/images/hero.jpg">
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Kiss Pollos",
+    "image": "https://fabianingram.github.io/kiss-pollo-es/assets/images/hero.jpg",
+    "telephone": "+1-602-555-0123",
+    "priceRange": "$$",
+    "servesCuisine": ["Mexican","Sinaloan"],
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "306 W Yavapai St",
+      "addressLocality": "Phoenix",
+      "addressRegion": "AZ",
+      "postalCode": "85003",
+      "addressCountry": "US"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 33.4306, "longitude": -112.0796 },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+      "opens": "10:30",
+      "closes": "17:00"
+    }],
+    "sameAs": ["https://www.instagram.com/kiss_pollos_es/"],
+    "acceptsReservations": false,
+    "hasMap": "https://maps.google.com/?q=306+W+Yavapai+St,+Phoenix,+AZ+85003"
+  }
+  </script>
+</head>
+<body>
+
+
+
+  <!-- Top Bar -->
+  <header class="topbar" role="banner">
+    <div class="brand">
+      <img src="assets/images/logo.jpg" alt="Kiss Pollos logo" class="logo" width="72" height="72" decoding="async" />
+      <span>Kiss Pollos</span>
+    </div>
+    <nav class="nav" aria-label="Primary">
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+      <a href="#contact" class="btn">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero (Local MP4 background) -->
+  <section class="hero hero-video-bg" aria-label="Featured">
+    <!-- IMPORTANT: save the Pexels video to this path: assets/videos/hero.mp4 -->
+    <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/images/hero.jpg">
+      <source src="assets/images/12909244_1920_1080_25fps.mp4" type="video/mp4" />
+      <!-- Optional WebM for better compression if you add it later -->
+      <!-- <source src="assets/videos/hero.webm" type="video/webm" /> -->
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-overlay">
+      <img src="assets/images/logo.jpg" alt="Kiss Pollos logo" class="hero-logo" width="180" height="180" decoding="async">
+      <h1>Sinaloa-Style Chicken • Phoenix</h1>
+      <p class="sub">Open Monday–Friday 10:30am–5:00pm</p>
+      <div id="openStatus" class="pill small" aria-live="polite"></div>
+      <p style="margin-top:12px;">
+        <a href="#visit" class="btn">Get Directions</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- Badge divider -->
+  <div class="divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
+      <path d="M0,64 C320,0 1120,128 1440,64 L1440,80 L0,80 Z" fill="rgba(246,199,57,.08)"></path>
+    </svg>
+  </div>
+
+  <!-- Badges -->
+  <section class="badge-strip" aria-label="Highlights">
+    <div class="wrap badges">
+      <div class="badge">⭐ Multi-year 5-Star Yelp</div>
+      <div class="badge">🏆 Best Pollo Asado — PHX News Times</div>
+      <div class="badge">🌶️ XTra Hot available</div>
+    </div>
+  </section>
+
+  <!-- Menu -->
+  <section id="menu" class="wrap card" aria-labelledby="menu-heading">
+    <h2 id="menu-heading">Menu Highlights</h2>
+
+    <div class="grid">
+      <article class="tile">
+        <img class="img-cover" src="assets/images/chickengrill.jpg" alt="Sinaloa-style chicken" loading="lazy" decoding="async">
+        <div>
+          <div class="tile-head">
+            <h3>Pollo Asado</h3>
+            <span class="price">$12</span>
+          </div>
+          <p>Signature marinade, grilled to perfection with house sauces.</p>
+          <div class="chips">
+            <span class="chip">Sinaloa-style</span>
+            <span class="chip">House sauces</span>
+            <span class="chip">Charcoal</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tile">
+        <img class="img-cover" src="assets/images/chicken&amp;fries.jpg" alt="Hot wings with fries" loading="lazy" decoding="async">
+        <div>
+          <div class="tile-head">
+            <h3>Wings</h3>
+            <span class="price">$10</span>
+          </div>
+          <p>From mild to 🔥 XTra Hot — crisp outside, juicy inside.</p>
+          <div class="chips">
+            <span class="chip">Mild–XTra Hot</span>
+            <span class="chip">Juicy</span>
+            <span class="chip">Crispy</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tile">
+        <img class="img-cover" src="assets/images/slider.jpg" alt="Chicken sliders" loading="lazy" decoding="async">
+        <div>
+          <div class="tile-head">
+            <h3>Sliders</h3>
+            <span class="price">$9</span>
+          </div>
+          <p>Buttery buns, house-made sauces, pickles.</p>
+          <div class="chips">
+            <span class="chip">House sauce</span>
+            <span class="chip">Pickles</span>
+            <span class="chip">Buttery buns</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="tile">
+        <img class="img-cover" src="assets/images/comboPlate.jpg" alt="Combo plate with sides" loading="lazy" decoding="async">
+        <div>
+          <div class="tile-head">
+            <h3>Combo Plates</h3>
+            <span class="price">$14</span>
+          </div>
+          <p>Fries, salads, and sides to complete the plate.</p>
+          <div class="chips">
+            <span class="chip">Fries</span>
+            <span class="chip">Salad</span>
+            <span class="chip">Sauces</span>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="hint muted small">* Daily specials posted on Instagram.</p>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="wrap card" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Gallery</h2>
+
+    <div id="galleryGrid" class="gallery">
+      <!-- Spaces URL-encoded for reliability on GitHub Pages -->
+      <img class="img-cover" src="assets/images/Screenshot%202025-10-19%20at%2011.21.25%E2%80%AFAM.png" alt="Restaurant front" loading="lazy" decoding="async">
+      <img class="img-cover" src="assets/images/supercombo.png" alt="Wings & fries" loading="lazy" decoding="async">
+      <img class="img-cover" src="assets/images/Screenshot%202025-10-19%20at%2011.21.41%E2%80%AFAM.png" alt="Restaurant sign" loading="lazy" decoding="async">
+      <img class="img-cover" src="assets/images/Doublechickensando.jpg" alt="Double chicken sandwich" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="wrap card" aria-labelledby="reviews-heading">
+    <h2 id="reviews-heading">What People Say</h2>
+    <div class="reviews">
+      <figure class="review">
+        <figcaption>“Best pollo asado in PHX. Crispy skin, juicy inside.”</figcaption>
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="who muted small">— J. Ramirez</div>
+      </figure>
+      <figure class="review">
+        <figcaption>“Wings XTra Hot are 🔥 but flavorful. Sliders slap.”</figcaption>
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="who muted small">— M. Gutierrez</div>
+      </figure>
+      <figure class="review">
+        <figcaption>“Fast, friendly, and consistent. My go-to lunch spot.”</figcaption>
+        <div class="stars" aria-label="5 stars">★★★★★</div>
+        <div class="who muted small">— M. Nguyen</div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- Instagram row -->
+  <section class="wrap card" aria-labelledby="social-heading">
+    <h2 id="social-heading">From Instagram</h2>
+    <div class="insta-grid">
+      <img class="img-cover" src="assets/images/fireChicken.jpg" alt="Grill shot" loading="lazy">
+      <img class="img-cover" src="assets/images/sauclesswings.jpg" alt="Wings closeup" loading="lazy">
+      <img class="img-cover" src="assets/images/quesadilla.jpg" alt="Sliders stack" loading="lazy">
+      <img class="img-cover" src="assets/images/cutchicken.png" alt="Combo plate" loading="lazy">
+      <img class="img-cover" src="assets/images/Screenshot%202025-10-19%20at%2011.20.47%E2%80%AFAM.png" alt="Sauce lineup" loading="lazy">
+      <img class="img-cover" src="assets/images/torilla.jpg" alt="Team at window" loading="lazy">
+    </div>
+    <div style="margin-top:10px">
+      <a class="btn ghost" href="https://www.instagram.com/kiss_pollos_es/" target="_blank" rel="noopener">Follow @kiss_pollos_es</a>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section id="visit" class="wrap grid-visit" aria-labelledby="visit-heading">
+    <div class="card">
+      <h2 id="visit-heading">Visit Us</h2>
+      <p><strong>Address:</strong> 306 W Yavapai St, Phoenix, AZ 85003</p>
+      <p><strong>Hours:</strong> Mon–Fri 10:30am–5:00pm</p>
+      <p><strong>Neighborhood:</strong> South Central Phoenix</p>
+      <div class="btn-row">
+        <a class="btn" href="https://maps.google.com/?q=306+W+Yavapai+St,+Phoenix,+AZ+85003" target="_blank" rel="noopener">Open in Maps</a>
+        <a class="btn ghost" href="tel:+1-602-555-0123">Call</a>
+      </div>
+    </div>
+
+    <div class="card map-card">
+      <div id="map" role="region" aria-label="Map to Kiss Pollos"></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="wrap card" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact</h2>
+
+    <div class="grid contact">
+      <div>
+        <p><strong>Email:</strong> <a href="mailto:hello@kisspollos.com">hello@kisspollos.com</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/kiss_pollos_es/" target="_blank" rel="noopener">@kiss_pollos_es</a></p>
+        <p class="muted small">For catering, DM on Instagram or email.</p>
+      </div>
+
+      <form id="contactForm" class="contact-form" novalidate>
+        <label>
+          <span>Name</span>
+          <input name="name" required aria-required="true" autocomplete="name">
+        </label>
+        <label>
+          <span>Email</span>
+          <input name="email" type="email" required aria-required="true" autocomplete="email">
+        </label>
+        <label>
+          <span>Message</span>
+          <textarea name="message" rows="4" required aria-required="true"></textarea>
+        </label>
+        <button class="btn" type="submit">Send</button>
+        <div id="formStatus" class="small muted" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="wrap footer" role="contentinfo">
+    <div>© <span id="year"></span> Kiss Pollos • Built with ♥ in Phoenix</div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox hidden" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" aria-label="Close">✕</button>
+    <img id="lightboxImg" alt="">
+  </div>
+
+  <!-- Sticky mobile action bar -->
+  <nav class="fab-actions" aria-label="Quick actions">
+    <a href="tel:+16025550123" class="fab-btn">Call</a>
+    <a href="https://maps.google.com/?q=306+W+Yavapai+St,+Phoenix,+AZ+85003" target="_blank" rel="noopener" class="fab-btn">Directions</a>
+    <a href="https://www.instagram.com/kiss_pollos_es/" target="_blank" rel="noopener" class="fab-btn">Instagram</a>
+  </nav>
+
+  <!-- Leaflet JS (map) -->
+  <script
+    src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin="anonymous">
+  </script>
+
+  <!-- App JS -->
+  <script src="app.js"></script>
+</body>
+</html>
